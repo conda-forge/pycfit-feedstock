@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   python_min: "3.11"
-  version: "1.0.3"
+  version: "1.1.0"
 
 package:
   name: pycfit
@@ -10,13 +10,13 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pycfit/pycfit-${{ version }}.tar.gz
-  sha256: 595635b6631227eba756c61daabe68f45bee54c27ecd6f7ad03b4ced62241d0b
+  sha256: 3a0eaa1bc99f18b365ddc44ba0d2e338605175ef2d7b46d336e9a957c976f6f9
 
 build:
   number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  
+
 requirements:
   host:
     - python ${{ python_min }}.*
@@ -45,7 +45,6 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - "*"
-      
 about:
   summary: Component Fitting package
   license: Apache-2.0
